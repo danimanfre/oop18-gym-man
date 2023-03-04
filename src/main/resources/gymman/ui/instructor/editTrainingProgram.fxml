@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?scenebuilder-stylesheet trainingProgram_interface.css?>
+
+<AnchorPane prefHeight="514.0" prefWidth="879.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane id="customerData" fx:id="customerDataPane" layoutX="15.0" layoutY="42.0" prefHeight="455.0" prefWidth="240.0">
+      <children>
+        <VBox layoutX="23.0" layoutY="21.0" prefHeight="150.00009999999747" prefWidth="220.0">
+          <children>
+            <HBox prefHeight="34.0" prefWidth="220.0">
+              <children>
+                <Label prefWidth="92.0" text="Name/Surame :" />
+                <Label fx:id="nameLabel" alignment="CENTER_LEFT" contentDisplay="RIGHT" prefWidth="99.0" text="Mattero De arco" wrapText="true" />
+              </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="220.0">
+              <children>
+                <Label prefWidth="56.0" text="Contact :" />
+                <Label fx:id="contactLabel" alignment="CENTER_LEFT" prefWidth="77.0" text="20202020" wrapText="false" />
+              </children>
+            </HBox>
+            <HBox prefHeight="38.000099999997474" prefWidth="220.0">
+              <children>
+                <Label prefWidth="106.0" text="Subscription type :" />
+                <Label fx:id="typeLabel" alignment="CENTER_LEFT" prefWidth="77.0" text="20202020" />
+              </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="220.0">
+              <children>
+                <HBox prefHeight="39.0" prefWidth="200.0">
+                  <children>
+                    <Label prefWidth="66.0" text="Instructor :" />
+                    <Label fx:id="instructorLabel" alignment="CENTER_LEFT" contentDisplay="TOP" prefWidth="99.0" text="Marco eiS" />
+                  </children>
+                </HBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox layoutX="19.0" layoutY="177.0" prefHeight="149.99990000000253" prefWidth="220.0">
+          <children>
+            <HBox prefHeight="38.0" prefWidth="220.0">
+              <children>
+                <Label prefWidth="50.0" text="From :" />
+                <DatePicker fx:id="fromDateP" />
+              </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="220.0">
+              <children>
+                <Label text="To :" />
+                <DatePicker fx:id="toDateP" onAction="#isPeriodValidationCorrect" />
+              </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="220.0">
+              <children>
+                <Label prefWidth="66.0" text="Duration :" />
+                <Label fx:id="durationLabel" alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="77.0" text="5 days" />
+              </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="220.0">
+              <children>
+                <Label text="Goal :" />
+                <ComboBox fx:id="goalCombo">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+              </children>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="customerExercises" fx:id="exercisesPane" layoutX="258.0" layoutY="42.0" minWidth="526.0" prefHeight="455.0" prefWidth="571.0">
+      <children>
+        <TableView fx:id="exercisesTable" layoutX="14.0" layoutY="13.0" prefHeight="218.0" prefWidth="537.0">
+          <columns>
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" text="Denominzaione" fx:id="nameCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="116.0" text="Categoria" fx:id="categoryCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="107.0" text="Tipo" fx:id="typeCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="78.0" text="Metrica" fx:id="metricCol" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="114.0" text="" fx:id="deleteCol" />
+          </columns>
+        </TableView>
+        <AnchorPane id="customerExercises" layoutX="23.0" layoutY="253.0" minHeight="196.0" minWidth="526.0" prefHeight="196.0" prefWidth="526.0">
+          <children>
+            <Label layoutX="236.0" layoutY="20.0" text="Denomination : " />
+            <TextField fx:id="exerciseTextField" layoutX="328.0" layoutY="20.0" prefWidth="154.0" />
+            <Label layoutX="23.0" layoutY="26.0" text="Category :" />
+            <Label layoutX="23.0" layoutY="63.0" text="Type :" />
+            <Label layoutX="24.0" layoutY="98.0" text="Metric :" />
+            <Label id="minuteLabel" fx:id="secondsLabel" layoutX="238.0" layoutY="88.0" text="Seconds :" />
+            <Label layoutX="21.0" layoutY="137.0" text="Sets :" />
+            <Label fx:id="repetitionLabel" layoutX="236.0" layoutY="54.0" text="Repetitions :" />
+            <Button id="addButton" layoutX="405.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#addExerciseToTable" text="Add exercise" />
+            <ComboBox fx:id="categoryCombo" layoutX="89.0" layoutY="27.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="typeCombo" layoutX="68.0" layoutY="59.0">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="metricCombo" layoutX="73.0" layoutY="98.0" onAction="#hideOnSelectedMetric">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Label layoutX="19.0" layoutY="166.0" text="Exercises to the list: " />
+            <Label fx:id="exSizeLabel" layoutX="142.0" layoutY="166.0" text="10" />
+            <TextField fx:id="secondsField" layoutX="302.0" layoutY="87.0" prefWidth="86.0" />
+            <TextField id="secondsField" fx:id="repetitionsField" layoutX="319.0" layoutY="51.0" prefWidth="86.0" />
+            <TextField id="secondsField" fx:id="setsField" layoutX="61.0" layoutY="134.0" prefWidth="86.0" />
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+    <Button fx:id="saveButton" layoutX="686.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#saveEditedTrainingProgram" text="Save" />
+    <Button fx:id="cancelButton" layoutX="753.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToInstructorPage" text="Cancel" />
+  </children>
+  <stylesheets>
+    <URL value="@trainingProgram_interface.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="exerciseCard" minWidth="291.0" prefHeight="109.00009999999747" prefWidth="291.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="gymman.ui.instructor.ExerciseController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <ImageView fx:id="exerciseImage" fitHeight="74.0" fitWidth="74.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@images/exercise1.png" />
+      </image>
+    </ImageView>
+    <Text layoutX="97.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria :" wrappingWidth="67.9833984375">
+      <fill>
+        <Color blue="0.149" green="0.141" red="0.129" fx:id="x1" />
+      </fill>
+    </Text>
+    <Label fx:id="categoryLabel" layoutX="156.0" layoutY="13.0" prefHeight="21.0" prefWidth="117.0" text="Strength" textFill="BLACK" />
+    <Label fx:id="metricLabel" layoutX="171.0" layoutY="54.0" prefHeight="21.0" prefWidth="106.0" text="with timer(1 min)" textFill="BLACK" />
+    <!--  ><Text fill="BLACK" layoutX="197.0" layoutY="105.0" onMouseClicked="#showMusclesPopUp" strokeType="OUTSIDE" strokeWidth="0.0" text="See involved muscles" wrappingWidth="0.0" />-->
+    <Text fill="BLACK" layoutX="96.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esecuzione :" wrappingWidth="0.0" />
+    <Text fill="BLACK" layoutX="95.0" layoutY="50.0" scaleX="0.910001819999954" scaleY="1.12456406020558" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo :" wrappingWidth="50.0" />
+    <Label fx:id="nameLabel" layoutX="120.0" layoutY="81.0" prefWidth="117.0" text="JACK BURPEES">
+      <font>
+        <Font name="System Bold Italic" size="12.0" />
+      </font>
+    </Label>
+    <Label fx:id="typeLabel" layoutX="131.0" layoutY="34.0" prefHeight="21.0" prefWidth="117.0" text="Crosfit" textFill="$x1" />
+    <ImageView fitHeight="23.999855041503906" fitWidth="23.999855041503906" layoutX="314.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <effect>
+        <Lighting>
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant color="#c7afaf" />
+          </light>
+        </Lighting>
+      </effect>
+    </ImageView>
+  </children>
+  <stylesheets>
+    <URL value="@trainingProgram_interface.css" />
+  </stylesheets>
+</AnchorPane>
